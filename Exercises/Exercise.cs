@@ -1,4 +1,4 @@
-namespace App20220809.Exercises;
+namespace App20220820.Exercises;
 
 public abstract class Exercise{
     

@@ -1,9 +1,9 @@
 ﻿namespace App20220820.Exercises; 
 
-public class MaxNumberFinder  : Exercise{
+public class MinNumberFinder  : Exercise{
 
-    public override string Name => "Numero mayor de un array";
-    public override string Description => "Crea una función que devuelva el número mayor de un array.";
+    public override string Name => "Buscar numero menor de un array";
+    public override string Description => "Crea una función que devuelva la posición del número menor de un array.";
     
     public override void Execute() {
         var rows = InputUtils.GetNumber("Ingresa el número de filas: ", x => x > 0);
@@ -16,20 +16,20 @@ public class MaxNumberFinder  : Exercise{
             }
         }
         
-        var maxNumber = int.MinValue;
+        var minNumber = int.MaxValue;
         var iPosition = 0;
         var jPosition = 0;
         for (var i = 0; i < rows; i++) {
             for (var j = 0; j < columns; j++) {
-                if(array[i, j] <= maxNumber) continue;
-                maxNumber = array[i, j];
+                if(array[i, j] >= minNumber) continue;
+                minNumber = array[i, j];
                 iPosition = i;
                 jPosition = j;
             }
         }
         
         Console.WriteLine();
-        Console.WriteLine($"El número mayor es: {maxNumber}");
+        Console.WriteLine($"El número minimo es: {minNumber}");
         Console.WriteLine($"Su posición es: [{iPosition}, {jPosition}]");
         
     }
